@@ -3,7 +3,7 @@ import { FaCartPlus, FaUserAlt } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import classes from "./Navbar.module.css";
 import SearchBar from "./SearchBar";
-
+import SignInDropdown from "./SignInDropdown";
 const NavBar = () => {
   return (
     <nav className={classes["main-nav-container"]}>
@@ -28,6 +28,7 @@ const NavBar = () => {
               <FaCartPlus />
             </NavLink>
           </IconContext.Provider>
+          <SignInDropdown />
         </li>
       </ul>
     </nav>

@@ -7,7 +7,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<p>Main Page</p>} />
-        <Route path="cart" element={<p>Helllo</p>} />
+        <Route path="cart" element={<p>Cart</p>} />
+        <Route path="auth" element={<p>Log in</p>} />
+        <Route path="wishlist" element={<p>Wishlist</p>} />
       </Routes>
     </BrowserRouter>
   );
