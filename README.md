@@ -1,1 +1,1 @@
-# quizApp
+# AmiiboStore
