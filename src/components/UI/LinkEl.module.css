@@ -3,11 +3,15 @@
 }
 .link a:link,
 .link a:visited {
+  padding: 0.6rem 1.2rem;
   text-decoration: none;
   font-size: 1.6rem;
   font-weight: 400;
-  color: #333;
+  color: #444;
+  transition: background-color 0.1s ease-in-out;
+  border-radius: 15px;
 }
 .link a:hover,
 .link a:active {
+  background-color: #eee;
 }

@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   font-size: 1.6rem;
+  z-index: 99;
 }
 .main-nav {
   width: 75%;
@@ -21,9 +22,6 @@
 .main-nav img {
   width: 18rem;
   height: 2.4rem;
-}
-.search-container {
-  background-color: ;
 }
 .main-nav-user {
   display: flex;
