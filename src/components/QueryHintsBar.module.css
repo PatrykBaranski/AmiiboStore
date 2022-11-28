@@ -1,0 +1,19 @@
+.hint-bar {
+  position: absolute;
+  width: 80%;
+  min-height: 280%;
+  background-color: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  border-radius: 0 0 20px 20px;
+}
+.hint-bar--header {
+  background-color: #eee;
+  height: 7.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 2.4rem;
+  font-size: 1.6rem;
+}

@@ -6,6 +6,7 @@ import classes from "./Navbar.module.css";
 import SearchBar from "./SearchBar";
 import SignInDropdown from "./SignInDropdown";
 import Backdrop from "./UI/Backdrop";
+import QueryHintsBar from "./QueryHintsBar";
 const NavBar = () => {
   const [isDropdownaVisible, setIsDropdownVisible] = useState(false);
 
@@ -50,6 +51,7 @@ const NavBar = () => {
           </li>
         </ul>
       </nav>
+      <QueryHintsBar />
     </>
   );
 };
