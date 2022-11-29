@@ -1,0 +1,7 @@
+.results {
+  padding: 5rem 10rem 15rem 10rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

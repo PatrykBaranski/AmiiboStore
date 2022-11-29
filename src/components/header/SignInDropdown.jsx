@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import LinkEl from "./UI/LinkEl";
+import LinkEl from "../UI/LinkEl";
 import classes from "./SignInDropdown.module.css";
 const links = [
   { text: "My acount", path: "/auth" },

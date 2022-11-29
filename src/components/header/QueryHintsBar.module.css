@@ -17,3 +17,9 @@
   padding-right: 2.4rem;
   font-size: 1.6rem;
 }
+.btn-close {
+  border: none;
+}
+.btn-close:hover {
+  cursor: pointer;
+}

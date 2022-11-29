@@ -5,18 +5,18 @@ import { IconContext } from "react-icons";
 import classes from "./Navbar.module.css";
 import SearchBar from "./SearchBar";
 import SignInDropdown from "./SignInDropdown";
-import Backdrop from "./UI/Backdrop";
+import Backdrop from "../UI/Backdrop";
 import QueryHintsBar from "./QueryHintsBar";
 const NavBar = () => {
   const [isDropdownaVisible, setIsDropdownVisible] = useState(false);
-
+  const [isHintsBarVisible, setIsHintsBarVisible] = useState(false);
   const showDropdownHandler = () => setIsDropdownVisible(true);
-  const hideDropdownHandler = () => {
-    setIsDropdownVisible(false);
-  };
+  const hideDropdownHandler = () => setIsDropdownVisible(false);
+  const showHintBar = () => setIsHintsBarVisible(true);
+  const closeHintBar = () => setIsHintsBarVisible(false);
   return (
     <>
-      <nav
+      <header
         className={classes["main-nav-container"]}
         onMouseLeave={hideDropdownHandler}
       >
@@ -26,7 +26,7 @@ const NavBar = () => {
               <img src="https://store.nintendo.co.uk/images/logo-nintendo.svg" />
             </NavLink>
           </li>
-          <SearchBar onMouseEnter={hideDropdownHandler} />
+          <SearchBar onClick={showHintBar} onMouseEnter={hideDropdownHandler} />
           <li className={classes["main-nav-user"]}>
             <IconContext.Provider value={{ color: "#FFF" }}>
               <button
@@ -50,8 +50,8 @@ const NavBar = () => {
             )}
           </li>
         </ul>
-      </nav>
-      <QueryHintsBar />
+      </header>
+      {isHintsBarVisible && <QueryHintsBar close={closeHintBar} />}
     </>
   );
 };

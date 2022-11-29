@@ -1,0 +1,16 @@
+.result {
+  height: 30rem;
+  width: 20rem;
+  border: 2px solid #eee;
+  border-radius: 15px;
+  padding: 1rem;
+}
+.item-img {
+  width: 90%;
+  border-radius: 15px;
+}
+.result a:link,
+.result a:visited {
+  color: #333;
+  text-decoration: none;
+}

@@ -1,12 +1,15 @@
 import { FaTimes } from "react-icons/fa";
+import SearchResults from "./SearchResults";
 import classes from "./QueryHintsBar.module.css";
-const QueryHintsBar = () => {
+const QueryHintsBar = ({ close }) => {
   return (
     <div className={classes["hint-bar"]}>
       <div className={classes["hint-bar--header"]}>
-        <FaTimes />
+        <button className={classes["btn-close"]} onClick={close}>
+          <FaTimes />
+        </button>
       </div>
-      <div className={classes["hint-bar--results"]}></div>
+      <SearchResults />
     </div>
   );
 };

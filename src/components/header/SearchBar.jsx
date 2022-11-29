@@ -1,12 +1,16 @@
 import { FaSearch } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import classes from "./SearchBar.module.css";
-const SearchBar = ({ onMouseEnter }) => {
+const SearchBar = ({ onMouseEnter, onClick }) => {
   const subimitHandler = (e) => {
     e.preventDefault();
   };
   return (
-    <li onMouseEnter={onMouseEnter} className={classes["searchbar-container"]}>
+    <li
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      className={classes["searchbar-container"]}
+    >
       <form className={classes.searchbar} onSubmit={subimitHandler}>
         <input type="text" placeholder="Search for a figure" />
         <button type="submit">
