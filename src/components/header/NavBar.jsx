@@ -52,6 +52,7 @@ const NavBar = () => {
         </ul>
       </header>
       {isHintsBarVisible && <QueryHintsBar close={closeHintBar} />}
+      {isHintsBarVisible && <Backdrop onClick={closeHintBar} />}
     </>
   );
 };

@@ -1,17 +1,18 @@
 .main-nav-container {
+  position: relative;
   height: 8rem;
   background-color: #e4000f;
   max-width: 100%;
   display: flex;
   justify-content: center;
   font-size: 1.6rem;
-  z-index: 99;
 }
 .main-nav {
   width: 75%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 .logo {
   cursor: pointer;

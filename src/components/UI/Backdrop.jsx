@@ -1,9 +1,9 @@
 import { createPortal } from "react-dom";
 import classes from "./Backdrop.module.css";
-const Backdrop = () => {
+const Backdrop = ({ onClick }) => {
   return createPortal(
-    <div className={classes["backdrop"]}></div>,
-    document.getElementById("root")
+    <div onClick={onClick} className={classes["backdrop"]}></div>,
+    document.body
   );
 };
 export default Backdrop;
