@@ -1,4 +1,8 @@
-const searchReducer = (state = {}, action) => {
+const initsialState = {
+  results: [],
+  query: "",
+};
+const searchReducer = (state = initsialState, action) => {
   switch (action.type) {
     case "FETCH_SEARCH_RESULTS":
       return { ...state, results: action.payload };

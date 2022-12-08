@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { FaCartPlus, FaUserAlt } from "react-icons/fa";
 import { IconContext } from "react-icons";
@@ -7,13 +8,17 @@ import SearchBar from "./SearchBar";
 import SignInDropdown from "./SignInDropdown";
 import Backdrop from "../UI/Backdrop";
 import QueryHintsBar from "./QueryHintsBar";
+import { setSearchQuery } from "../../store";
 const NavBar = () => {
+  const dispatch = useDispatch();
   const [isDropdownaVisible, setIsDropdownVisible] = useState(false);
   const [isHintsBarVisible, setIsHintsBarVisible] = useState(false);
   const showDropdownHandler = () => setIsDropdownVisible(true);
   const hideDropdownHandler = () => setIsDropdownVisible(false);
   const showHintBar = () => setIsHintsBarVisible(true);
-  const closeHintBar = () => setIsHintsBarVisible(false);
+  const closeHintBar = () => {
+    setIsHintsBarVisible(false);
+  };
   return (
     <>
       <header

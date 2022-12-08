@@ -1,6 +1,7 @@
 import { FaTimes } from "react-icons/fa";
 import SearchResults from "./SearchResults";
 import classes from "./QueryHintsBar.module.css";
+
 const QueryHintsBar = ({ close }) => {
   return (
     <div className={classes["hint-bar"]}>
