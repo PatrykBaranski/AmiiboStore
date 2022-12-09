@@ -2,6 +2,6 @@
   padding: 5rem 10rem 15rem 10rem;
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  gap: 4rem;
   align-items: center;
 }

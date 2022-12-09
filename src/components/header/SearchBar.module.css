@@ -32,3 +32,12 @@
 .searchbar .icon {
   color: #333;
 }
+.btn--clear {
+  font-size: 1rem;
+  padding-right: 1rem;
+  font-weight: 300;
+}
+.btn--submit {
+  display: flex;
+  align-items: center;
+}
