@@ -1,15 +1,19 @@
 import { useSelector, useDispatch } from "react-redux";
 import SearchResult from "./SearchResult";
 import classes from "./SearchResults.module.css";
-import { fetchSearchResults } from "../../store";
-import store from "../../store";
+import { fetchSearchResults, setIsLoading } from "../../store";
 import { useEffect } from "react";
+import LoadingSpiner from "../UI/LoadingSpiner";
 const SearchResults = () => {
   const dispatch = useDispatch();
-  const { query, results } = useSelector((state) => state);
+  const { query, results, isLoading } = useSelector((state) => state);
+  console.log(isLoading);
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      dispatch(fetchSearchResults());
+      if (query.length >= 3) {
+        dispatch(fetchSearchResults());
+        dispatch(setIsLoading(true));
+      }
     }, 500);
     return () => clearTimeout(timeoutId);
   }, [query]);
@@ -24,6 +28,7 @@ const SearchResults = () => {
           />
         ))}
       </ul>
+      {isLoading && <LoadingSpiner />}
     </>
   );
 };
