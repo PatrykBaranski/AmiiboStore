@@ -1,0 +1,23 @@
+.hero-baner {
+  height: 18rem;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 15px;
+  border: 1px solid #ddd;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.hero-baner div {
+  grid-column: 1/3;
+  padding: 4.8rem;
+  font-size: 1.6rem;
+}
+.hero-baner h2 {
+  font-size: 3.2rem;
+  font-weight: 800;
+}
+.hero-baner img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0 15px 15px 0;
+}
