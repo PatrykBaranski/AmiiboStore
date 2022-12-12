@@ -9,7 +9,7 @@ import { useEffect } from "react";
 
 const SearchBar = ({ onMouseEnter, onClick }) => {
   const [isClearBtnVisible, setIsClearBtnVisible] = useState(false);
-  const query = useSelector((state) => state.query);
+  const query = useSelector((state) => state.searchReducer.query);
   const dispatch = useDispatch();
   useEffect(() => {
     if (query.length >= 3) {

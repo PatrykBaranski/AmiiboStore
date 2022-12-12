@@ -6,8 +6,10 @@ import { useEffect } from "react";
 import LoadingSpiner from "../UI/LoadingSpiner";
 const SearchResults = () => {
   const dispatch = useDispatch();
-  const { query, results, isLoading } = useSelector((state) => state);
-  console.log(isLoading);
+
+  const { query, results, isLoading } = useSelector(
+    (state) => state.searchReducer
+  );
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       if (query.length >= 3) {
@@ -32,4 +34,5 @@ const SearchResults = () => {
     </>
   );
 };
+
 export default SearchResults;

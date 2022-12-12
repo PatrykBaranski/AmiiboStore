@@ -10,10 +10,10 @@ const searchReducer = (state = initsialState, action) => {
     }
     case "SET_SEARCH_QUERY":
       return { ...state, query: action.payload };
-    default:
-      return state;
     case "SET_IS_LOADING":
       return { ...state, isLoading: action.payload };
+    default:
+      return state;
   }
 };
 export default searchReducer;
