@@ -17,7 +17,10 @@ const SearchResults = () => {
         dispatch(setIsLoading(true));
       }
     }, 500);
-    return () => clearTimeout(timeoutId);
+    return () => {
+      clearTimeout(timeoutId);
+      // dispatch(setIsLoading(false));
+    };
   }, [query]);
   return (
     <>

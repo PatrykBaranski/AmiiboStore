@@ -1,32 +1,51 @@
-import { configureStore, applyMiddleware } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
 import searchReducer from "./searchReducer";
-import useHttp from "../hooks/useHttp";
 import filterReducer from "./filterReducer";
+const fetchData = async (url) => {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("Failed loading data");
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    throw new Error(err.message);
+  }
+};
 export const fetchFillterOption = () => {
   return async (dispatch) => {
     const franchiseUrl = `https://www.amiiboapi.com/api/gameseries`;
     const typeUrl = `https://www.amiiboapi.com/api/type`;
-    const { amiibo: franchiseData } = await useHttp(franchiseUrl);
-    const { amiibo: typeData } = await useHttp(typeUrl);
+    const { amiibo: franchiseData } = await fetchData(franchiseUrl);
+    const { amiibo: typeData } = await fetchData(typeUrl);
 
     dispatch({
       type: "FETCH_FILLTER_OPTION",
-      payload: { franchiseData, typeData },
+      payload: {
+        franchiseData: franchiseData,
+        typeData: typeData,
+      },
     });
   };
 };
 export const fetchSearchResults = () => {
   return async (dispatch, getState) => {
-    const { searchReducer } = getState();
-    const { query } = searchReducer;
-    const url = `https://www.amiiboapi.com/api/amiibo/?character=${query}`;
-    const data = await useHttp(url);
+    try {
+      const { searchReducer } = getState();
+      const { query } = searchReducer;
+      const url = `https://www.amiiboapi.com/api/amiibo/?character=${query}`;
+      const data = await fetchData(url);
 
-    dispatch({
-      type: "FETCH_SEARCH_RESULTS",
-      payload: data.amiibo?.slice(0, 5),
-    });
+      dispatch({
+        type: "FETCH_SEARCH_RESULTS",
+        payload: data.amiibo?.slice(0, 5),
+      });
+    } catch (err) {
+      dispatch({
+        type: "ERROR_FETCHING_DATA",
+        payload: "Sorry, we found nothing for this query",
+      });
+    }
   };
 };
 export const setSearchQuery = (payload) => {

@@ -12,6 +12,8 @@ const searchReducer = (state = initsialState, action) => {
       return { ...state, query: action.payload };
     case "SET_IS_LOADING":
       return { ...state, isLoading: action.payload };
+    case "ERROR_FETCHING_DATA":
+      return { ...state, isLoading: false };
     default:
       return state;
   }
