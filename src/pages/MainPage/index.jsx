@@ -1,6 +1,7 @@
 import HeroBaner from "./HeroBaner";
 import classes from "./MainPage.module.css";
 import SideBar from "./SideBar";
+import MainContent from "./MainContent";
 const MainPage = () => {
   return (
     <div className={classes["page-container"]}>
@@ -9,12 +10,7 @@ const MainPage = () => {
         <div className={classes["side-bar"]}>
           <SideBar />
         </div>
-        <div
-          className={classes["main-content"]}
-          style={{ backgroundColor: "blue" }}
-        >
-          adasdadas
-        </div>
+        <MainContent />
       </section>
     </div>
   );

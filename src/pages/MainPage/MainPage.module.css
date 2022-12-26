@@ -1,7 +1,7 @@
 .page-container {
   padding-top: 7.2rem;
   height: 100%;
-  width: 130rem;
+  max-width: 130rem;
   margin: 0 auto;
 }
 .main-section {
