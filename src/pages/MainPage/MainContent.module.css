@@ -6,3 +6,18 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5rem;
 }
+.btn-more {
+  grid-column: 1/-1;
+  background-color: #e4000f;
+  color: #fff;
+  font-size: 1.6rem;
+  border: none;
+  padding: 1.2rem 2.4rem;
+  border-radius: 2.4rem;
+  width: 30%;
+  font-weight: 600;
+  margin: 0 auto;
+}
+.btn-more:hover {
+  cursor: pointer;
+}

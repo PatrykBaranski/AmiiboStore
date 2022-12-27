@@ -23,7 +23,8 @@
   font-weight: 700;
 }
 .figure-link img {
-  width: 100%;
+  align-self: center;
+  width: 70%;
   height: 50%;
 }
 
@@ -35,4 +36,21 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  align-items: center;
+}
+.btn-figure:link,
+.btn-figure:visited {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+  padding: 1.2rem 2.4rem;
+  border-radius: 2.4rem;
+  border: 1px solid #ddd;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+.btn-figure:hover,
+.btn-figure:active {
+  border: 2px solid #e4000f;
+  margin: -1px;
 }

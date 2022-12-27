@@ -12,7 +12,9 @@ const FigureCart = ({ img, name, series, type, id }) => {
       </div>
       <div className={classes["price-container"]}>
         <span className={classes["price"]}>$10.99</span>
-        <Link to={id}>VIEW PRODUCT</Link>
+        <Link className={classes["btn-figure"]} to={id}>
+          VIEW PRODUCT
+        </Link>
       </div>
     </Link>
   );
