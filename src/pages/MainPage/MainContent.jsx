@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import FigureCart from "./FigureCart";
+import classes from "./MainContent.module.css";
 const MainContent = () => {
   const [figuresData, setFigureData] = useState([]);
   useEffect(() => {
@@ -12,14 +13,19 @@ const MainContent = () => {
     fetchData();
   }, []);
   console.log(figuresData);
-  return figuresData.map((el) => (
-    <FigureCart
-      img={el.image}
-      series={el.gameSeries}
-      name={el.character}
-      type={el.type}
-    />
-  ));
+  return (
+    <div className={classes["figure-container"]}>
+      {figuresData.map((el) => (
+        <FigureCart
+          img={el.image}
+          series={el.gameSeries}
+          name={el.character}
+          type={el.type}
+          id={`${el.head}${el.tail}`}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default MainContent;

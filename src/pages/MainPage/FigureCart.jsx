@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-const FigureCart = ({ img, name, series, type }) => {
+import classes from "./FigureCart.module.css";
+const FigureCart = ({ img, name, series, type, id }) => {
   return (
-    <Link>
+    <Link className={classes["figure-link"]} to={id}>
       <img src={img} />
       <div>
         <span>{type}</span>
@@ -9,9 +10,9 @@ const FigureCart = ({ img, name, series, type }) => {
           {name} ({series})
         </h2>
       </div>
-      <div>
-        <span>$10.99</span>
-        <button>VIEW PRODUCT</button>
+      <div className={classes["price-container"]}>
+        <span className={classes["price"]}>$10.99</span>
+        <Link to={id}>VIEW PRODUCT</Link>
       </div>
     </Link>
   );
