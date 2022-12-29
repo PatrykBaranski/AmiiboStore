@@ -10,6 +10,7 @@ const MainContent = () => {
       const res = await fetch("https://www.amiiboapi.com/api/amiibo/");
       const data = await res.json();
       setFigureData(data.amiibo);
+      setNumberOfResults(12);
     };
     fetchData();
   }, []);

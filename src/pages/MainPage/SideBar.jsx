@@ -1,15 +1,30 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { fetchFillterOption } from "../../store";
+import { useEffect, useRef } from "react";
+import {
+  fetchFillterOption,
+  setCheckedOptions,
+  delateCheckedOptions,
+} from "../../store";
 import { FaAngleUp } from "react-icons/fa";
 import classes from "./SideBar.module.css";
 import { useState } from "react";
-function ChechBoxEl({ name }) {
+function ChechBoxEl({ name, id, type }) {
+  const ref = useRef();
+  const dispatch = useDispatch();
+  const checkboxClickHandler = () => {
+    if (ref.current.checked) {
+      dispatch(setCheckedOptions({ type, value: { name, id } }));
+    } else {
+      dispatch(delateCheckedOptions({ type, id }));
+    }
+  };
   return (
     <li className={classes["checkbox"]}>
-      <label>
-        <input type="checkbox" />
-        <span style={{ display: "inline" }}>{name}</span>
+      <label onClick={checkboxClickHandler}>
+        <input type="checkbox" ref={ref} />
+        <span style={{ display: "inline" }}>
+          {name} ({id})
+        </span>
       </label>
     </li>
   );
@@ -56,11 +71,11 @@ const SideBar = () => {
     (state) => state.filterReducer.filterOptions
   );
   const frinichisesList = franchises?.map((el) => (
-    <ChechBoxEl name={`${el.name} (${el.key})`} key={el.key} />
+    <ChechBoxEl name={el.name} id={el.key} key={el.key} type="series" />
   ));
   console.log(type);
   const typeList = type?.map((el) => (
-    <ChechBoxEl name={`${el.name} (${el.key})`} key={el.key} />
+    <ChechBoxEl name={el.name} id={el.key} key={el.key} type="type" />
   ));
   return (
     <div className={classes["sidebar"]}>

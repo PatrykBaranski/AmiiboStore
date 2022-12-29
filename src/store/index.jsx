@@ -60,9 +60,20 @@ export const setIsLoading = (payload) => {
     payload,
   };
 };
+export const setCheckedOptions = (payload) => {
+  return {
+    type: "SET_CHECKED_OPTIONS",
+    payload,
+  };
+};
+export const delateCheckedOptions = (payload) => {
+  return {
+    type: "DELATE_CHECKED_OPTION",
+    payload,
+  };
+};
 const store = configureStore({
   reducer: { searchReducer, filterReducer },
   middleware: [thunk],
 });
-// store.subscribe(() => console.log(store.getState()));
 export default store;
