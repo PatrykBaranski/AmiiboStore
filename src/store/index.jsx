@@ -61,9 +61,16 @@ export const setIsLoading = (payload) => {
   };
 };
 export const setCheckedOptions = (payload) => {
-  return {
-    type: "SET_CHECKED_OPTIONS",
-    payload,
+  console.log(payload);
+  return async (dispatch) => {
+    const res = await fetch(
+      `https://www.amiiboapi.com/api/amiibo/?${payload.type}=${payload.value.id}`
+    );
+    const data = await res.json();
+    dispatch({
+      type: "SET_CHECKED_OPTIONS",
+      payload: data.amiibo,
+    });
   };
 };
 export const delateCheckedOptions = (payload) => {

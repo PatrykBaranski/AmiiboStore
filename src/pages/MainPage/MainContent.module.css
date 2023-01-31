@@ -1,5 +1,5 @@
 .figure-container {
-  align-self: center;
+  align-self: start;
   grid-column: 2/-1;
   width: 100%;
   display: grid;

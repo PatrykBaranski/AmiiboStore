@@ -71,7 +71,7 @@ const SideBar = () => {
     (state) => state.filterReducer.filterOptions
   );
   const frinichisesList = franchises?.map((el) => (
-    <ChechBoxEl name={el.name} id={el.key} key={el.key} type="series" />
+    <ChechBoxEl name={el.name} id={el.key} key={el.key} type="gameseries" />
   ));
   console.log(type);
   const typeList = type?.map((el) => (

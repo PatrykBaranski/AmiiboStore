@@ -38,8 +38,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.btn-figure:link,
-.btn-figure:visited {
+.btn-figure {
   text-decoration: none;
   color: #333;
   font-size: 1.2rem;
@@ -53,4 +52,5 @@
 .btn-figure:active {
   border: 2px solid #e4000f;
   margin: -1px;
+  cursor: pointer;
 }
